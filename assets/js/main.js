@@ -9,7 +9,7 @@
   /* ---------- Integrated UG courses with add-on programmes ---------- */
   var UG = [
     { c: "BBA", h: true, cat: "business aviation", img: "dip-business", a: ["Aviation, Logistics & Supply Chain Management", "Airline Cabin Crew and Airport Management", "Hospitality Management"] },
-    { c: "BBA Aviation", h: true, cat: "aviation", img: "dip-aviation", a: ["Airline Cabin Crew and Airport Management", "Travel & Tourism"] },
+    // { c: "BBA Aviation", h: true, cat: "aviation", img: "dip-aviation", a: ["Airline Cabin Crew and Airport Management", "Travel & Tourism"] },
     { c: "BBA Logistics", h: true, cat: "business", img: "act-industrial-visit", a: ["Logistics & Supply Chain Management"] },
     { c: "B.Com Logistics", h: true, cat: "business", img: "prog-handshake", a: ["Export Management"] },
     { c: "B.Com", sub: "Finance / CA / Tax / Co-operation", cat: "business tech aviation", img: "dip-finance", a: ["ACCA", "CMA (USA / India)", "Aviation, Logistics & Supply Chain Management", "Airline Cabin Crew and Airport Management", "Game Development & 3D Art Designing", "Artificial Intelligence (AI) & Data Science", "Cyber Security and Ethical Hacking"] },
