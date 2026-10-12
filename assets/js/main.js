@@ -252,7 +252,7 @@
     var ugCard = function (x, type) {
       var text = (fullName(x) + " " + x.a.join(" ")).toLowerCase();
       return '<article class="course panel hover" data-cat="' + x.cat + '" data-text="' + esc(text) + '">' +
-        '<div class="holo"><img src="assets/img/' + x.img + '.webp" alt="" loading="lazy" width="560" height="320"></div>' +
+        '<div class="holo fit"><img class="fill" src="assets/img/' + x.img + '.webp" alt="" aria-hidden="true" loading="lazy"><img src="assets/img/' + x.img + '.webp" alt="" loading="lazy" width="560" height="350"></div>' +
         '<div class="course-top"><span class="course-type">' + type + '</span><h3>' + esc(x.c) +
         (x.sub ? ' <small>' + esc(x.sub) + '</small>' : '') + (x.h ? ' <small>(Hons)</small>' : '') + '</h3></div>' +
         '<ul class="addon-list">' + x.a.map(function (a) { return "<li>" + esc(a) + "</li>"; }).join("") + '</ul>' +
@@ -264,7 +264,7 @@
     dipGrid.innerHTML = DIPLOMAS.map(function (d) {
       var text = (d.t + " " + d.a.join(" ")).toLowerCase();
       return '<article class="dip panel hover" data-cat="' + d.cat + '" data-text="' + esc(text) + '">' +
-        '<div class="holo"><img src="assets/img/dip-' + d.img + '.webp" alt="" loading="lazy" width="480" height="300"></div>' +
+        '<div class="holo fit"><img class="fill" src="assets/img/dip-' + d.img + '.webp" alt="" aria-hidden="true" loading="lazy"><img src="assets/img/dip-' + d.img + '.webp" alt="" loading="lazy" width="560" height="350"></div>' +
         '<div class="dip-head"><span class="course-type">Advanced Diploma</span><h3>' + esc(d.t) + '</h3><div class="dip-meta"><span class="tag">' + esc(d.d) + '</span><span class="tag">' + d.a.length + ' courses</span></div></div>' +
         '<ul class="addon-list">' + d.a.map(function (a) { return "<li>" + esc(a) + "</li>"; }).join("") + '</ul></article>';
     }).join("");

@@ -38,8 +38,8 @@
   --net-node: rgba(120, 200, 255, .8);
   --net-hot: rgba(244, 183, 64, .95);
 
-  --f-display: "Orbitron", "Eurostile", "Segoe UI", system-ui, sans-serif;
-  --f-body: "Exo 2", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-display: "Chakra Petch", "Eurostile", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Chakra Petch", "Segoe UI", system-ui, -apple-system, sans-serif;
   --f-mono: "Share Tech Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --step--1: .875rem;
@@ -240,6 +240,15 @@ p { margin: 0; }
 .bot .chest-bar { animation: eq 1.2s ease-in-out infinite; transform-origin: bottom; transform-box: fill-box; }
 .bot .chest-bar:nth-child(2) { animation-delay: .2s; } .bot .chest-bar:nth-child(3) { animation-delay: .4s; } .bot .chest-bar:nth-child(4) { animation-delay: .6s; }
 @keyframes eq { 50% { transform: scaleY(.35); } }
+/* humanoid robot: arm wave, head tilt, floor shadow */
+.bot.humanoid .h-arm-r { transform-origin: 274px 160px; animation: wave 7s ease-in-out infinite; }
+.bot.humanoid .h-arm-l { transform-origin: 146px 160px; animation: sway 7s ease-in-out infinite; }
+.bot.humanoid .h-head { transform-origin: 210px 124px; animation: tilt 7s ease-in-out infinite; }
+.bot.humanoid .h-shadow { transform-origin: 210px 462px; animation: shadow 5s ease-in-out infinite; }
+@keyframes wave { 0%, 55%, 100% { transform: rotate(0); } 64% { transform: rotate(-150deg); } 70% { transform: rotate(-130deg); } 76% { transform: rotate(-150deg); } 82% { transform: rotate(-130deg); } 90% { transform: rotate(0); } }
+@keyframes sway { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(4deg); } }
+@keyframes tilt { 0%, 50%, 100% { transform: rotate(0); } 66%, 84% { transform: rotate(-6deg); } }
+@keyframes shadow { 50% { transform: scale(.85); opacity: .7; } }
 .bot-chip { position: absolute; font-family: var(--f-mono); font-size: .78rem; letter-spacing: .08em; padding: 7px 11px; border-radius: 6px; background: var(--glass-solid); border: 1px solid var(--line-strong); color: var(--cyan); white-space: nowrap; animation: hover 6s ease-in-out infinite; }
 .bot-chip.c1 { top: 8%; left: 0; } .bot-chip.c2 { top: 40%; right: 0; animation-delay: -2s; color: var(--gold-ink); border-color: rgba(244,183,64,.5); } .bot-chip.c3 { bottom: 10%; left: 6%; animation-delay: -4s; color: var(--ok); border-color: rgba(62,240,165,.45); }
 
@@ -268,9 +277,9 @@ p { margin: 0; }
 .stack { display: grid; gap: 18px; }
 .lead { color: var(--muted); font-size: var(--step-1); }
 .holo { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--line-strong); box-shadow: var(--glow); }
-.holo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.05); }
-.holo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(61,214,255,.08), rgba(5,10,24,.35)), repeating-linear-gradient(0deg, rgba(61,214,255,.06) 0 1px, transparent 1px 4px); pointer-events: none; }
-.holo .scan { position: absolute; left: 0; right: 0; height: 60px; background: linear-gradient(180deg, transparent, rgba(61, 214, 255, .25), transparent); animation: scany 4s linear infinite; z-index: 1; }
+.holo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.holo .scan { display: none; }
 @keyframes scany { from { top: -60px; } to { top: 100%; } }
 .holo-tag { position: absolute; z-index: 2; left: 14px; bottom: 14px; font-family: var(--f-mono); font-size: .8rem; color: var(--cyan); background: rgba(5,10,24,.8); border: 1px solid var(--line-strong); border-radius: 6px; padding: 6px 10px; }
 
@@ -327,7 +336,7 @@ p { margin: 0; }
 
 /* Diploma cards */
 .dip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.dip { overflow: hidden; display: grid; grid-template-rows: 150px auto 1fr; }
+.dip { overflow: hidden; display: grid; grid-template-rows: auto auto 1fr; }
 .dip[hidden] { display: none; }
 .dip .holo { border: 0; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--line); }
 .dip .holo img { object-position: center 30%; }
@@ -379,11 +388,11 @@ p { margin: 0; }
 
 /* Gallery */
 .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.tile { position: relative; overflow: hidden; border-radius: 10px; border: 1px solid var(--line); aspect-ratio: 4 / 3; max-width: 100%; }
-.tile img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .6s, filter .4s; filter: saturate(.85) brightness(.8); }
-.tile:hover img { transform: scale(1.06); filter: saturate(1) brightness(.95); }
+.tile { position: relative; overflow: hidden; border-radius: 10px; border: 1px solid var(--line); aspect-ratio: 16 / 9.3; max-width: 100%; }
+.tile img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .6s; }
+.tile:hover img { transform: scale(1.04); }
 .tile span { position: absolute; left: 10px; bottom: 10px; right: 10px; font: 700 .78rem var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: #fff; text-shadow: 0 2px 8px #000; }
-.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(5,10,24,.9)); }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.65)); }
 .tile span { z-index: 1; }
 
 /* Certificates */
@@ -509,17 +518,21 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .reveal-ready .reveal.in { opacity: 1; transform: none; }
 
 /* Logo image: white on dark, navy on light */
-.brand .logo { height: 34px; width: auto; flex: none; }
-.brand-foot .logo { height: 40px; }
+.brand .logo { height: 48px; width: auto; flex: none; }
+.brand-foot .logo { height: 58px; }
 .logo-light { display: none; }
 :root[data-theme="light"] .logo-dark { display: none; }
 :root[data-theme="light"] .logo-light { display: block; }
-@media (max-width: 640px) { .site-header .brand .logo { height: 26px; } }
+@media (max-width: 640px) { .site-header .brand .logo { height: 38px; } }
 
 /* Course cards carry a photo */
-.course { padding: 0; overflow: hidden; grid-template-rows: 140px auto 1fr auto; }
+.course { padding: 0; overflow: hidden; grid-template-rows: auto auto 1fr auto; }
 .course > .holo { border: 0; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--line); }
 .course > .holo img { object-position: center 35%; }
+/* card photos: whole image shown, soft blurred copy fills the spare space */
+.holo.fit { aspect-ratio: 16 / 10; background: #0b1224; }
+.holo.fit img { position: relative; object-fit: contain; object-position: center; }
+.holo.fit img.fill { position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); object-fit: cover; filter: blur(16px) brightness(.7); }
 .course > .course-top, .course > .addon-list { padding-inline: 22px; }
 .course > .course-top { padding-top: 4px; }
 .course > .course-foot { margin: 0 22px 20px; }
