@@ -23,10 +23,10 @@
     { c: "B.Sc Bio Technology", h: true, cat: "science", img: "dip-forensic", a: ["Food Processing & Entrepreneurship"] },
     { c: "B.Sc Food Technology", h: true, cat: "science", img: "act-orientation", a: ["Food Processing & Entrepreneurship"] },
     { c: "B.Sc Fashion Technology", h: true, cat: "arts", img: "dip-design", a: ["Fashion Designing"] },
-    { c: "BA Multimedia", h: true, cat: "arts tech", img: "act-events", a: ["AI Prompt Engineering & Data Science"] },
-    { c: "BA Sociology", h: true, cat: "arts", img: "prog-team", a: ["Data Analytics"] },
-    { c: "BA English", h: true, cat: "arts tech", img: "dip-personality-lang", a: ["AI Prompt Engineering"] },
-    { c: "BTTM", h: true, cat: "aviation", img: "act-career-guidance", a: ["Hospitality Management, Aviation Management"] }
+    { c: "BA Multimedia", h: true, cat: "arts tech", img: "act-events", a: ["AI Prompt Engineering & Data Science"] }
+    // { c: "BA Sociology", h: true, cat: "arts", img: "prog-team", a: ["Data Analytics"] },
+    // { c: "BA English", h: true, cat: "arts tech", img: "dip-personality-lang", a: ["AI Prompt Engineering"] },
+    // { c: "BTTM", h: true, cat: "aviation", img: "act-career-guidance", a: ["Hospitality Management, Aviation Management"] }
   ];
   var PG = [
     { c: "M.Com", sub: "Finance & Taxation", cat: "business", img: "dip-finance", a: ["ACCA, CMA (IND/USA), EA, CPA"] },
