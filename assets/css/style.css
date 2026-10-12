@@ -254,7 +254,7 @@ p { margin: 0; }
 
 /* Stats */
 .stats { position: relative; z-index: 2; border-block: 1px solid var(--line); background: var(--tint); }
-.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
+.stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); }
 .stat { padding: 28px 16px; display: grid; gap: 6px; text-align: center; border-left: 1px solid var(--line); }
 .stat:first-child { border-left: 0; }
 .stat b { font-family: var(--f-display); font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem); line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; text-shadow: var(--text-glow); }
@@ -529,8 +529,12 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .course { padding: 0; overflow: hidden; grid-template-rows: auto auto 1fr auto; }
 .course > .holo { border: 0; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--line); }
 .course > .holo img { object-position: center 35%; }
+/* keep photos compact: standalone photos capped, student photo smaller, card photos shorter */
+.holo[style*="aspect-ratio"] { width: 100%; max-width: 420px; margin-inline: auto; }
+.holo.photo-sm { max-width: 330px; }
+.cert .frame { max-width: 260px; margin-inline: auto; width: 100%; }
 /* card photos: whole image shown, soft blurred copy fills the spare space */
-.holo.fit { aspect-ratio: 16 / 10; background: #0b1224; }
+.holo.fit { aspect-ratio: 16 / 8; background: #0b1224; }
 .holo.fit img { position: relative; object-fit: contain; object-position: center; }
 .holo.fit img.fill { position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); object-fit: cover; filter: blur(16px) brightness(.7); }
 .course > .course-top, .course > .addon-list { padding-inline: 22px; }
@@ -561,7 +565,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
   .stat { border-left: 0 !important; border-top: 1px solid var(--line); }
   .stat:nth-child(-n+2) { border-top: 0; }
   .stat:nth-child(even) { border-left: 1px solid var(--line) !important; }
-  .stat:last-child { grid-column: 1 / -1; }
+  .stat:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-actions .btn, .cta-band .btn { flex: 1 1 100%; }
   .brand small { display: none; }

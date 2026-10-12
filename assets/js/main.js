@@ -3,7 +3,7 @@
 (function () {
   "use strict";
 
-  var PHONE = "918848261394";
+  var PHONE = "919778400739";
   var EMAIL = "bluepeakskilldevelopment@gmail.com";
 
   /* ---------- Integrated UG courses with add-on programmes ---------- */
@@ -191,7 +191,7 @@
   /* ---------- Terminal typer (home) ---------- */
   var term = $("#terminal");
   if (term) {
-    var combos = [["BCA (Hons)", "Full Stack AI Development"], ["BBA Aviation (Hons)", "Airline Cabin Crew and Airport Management"], ["M.Sc Artificial Intelligence", "GEN AI & Robotics"], ["B.Sc Psychology (Hons)", "Behaviour Therapy & Counselling"], ["B.Com", "ACCA"], ["B.Sc Electronics (Hons)", "Block Chain Technology"]];
+    var combos = [["BCA (Hons)", "Full Stack AI Development"], ["Airline Cabin Crew and Airport Management"], ["M.Sc Artificial Intelligence", "GEN AI & Robotics"], ["B.Sc Psychology (Hons)", "Behaviour Therapy & Counselling"], ["B.Com", "ACCA"], ["Block Chain Technology"]];
     var ci = 0;
     var lineEl = function (cls, txt) { var d = document.createElement("div"); if (cls) d.className = cls; d.textContent = txt; return d; };
     var typeLine = function (el, text, cb) {
