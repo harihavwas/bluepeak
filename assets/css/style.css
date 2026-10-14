@@ -579,3 +579,8 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
   .reveal-ready .reveal { opacity: 1; transform: none; }
   .glitch::before, .glitch::after { display: none; }
 }
+
+/* four-item stats box (Careers): 4 across, 2x2 on phones */
+.stats-grid.four { grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 641px) and (max-width: 1024px) { .stats-grid.four .stat:nth-child(4) { border-left: 1px solid var(--line); border-top: 0; } }
+@media (max-width: 640px) { .stats-grid.four { grid-template-columns: 1fr 1fr; } }
